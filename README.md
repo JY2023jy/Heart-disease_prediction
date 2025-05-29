@@ -88,6 +88,7 @@ KNN 평균 성능:
 
  F1 Score 기준 최고의 조합:
 모델: Logistic Regression, 파라미터: C=0.1, F1 Score: 0.8300
+
 ---
 
 추가 확인:confusion matrix of logistic regression and KNN >
