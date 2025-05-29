@@ -34,6 +34,7 @@ sort_values (method:pandas-sort the dataframe by one or more columns.)
 6) Output: 
 
 4가지 모델 평균 성능 비교:
+
 <img width="363" alt="image" src="https://github.com/user-attachments/assets/9d196393-d459-4074-bc23-2748f609538c" />
 
 ![image](https://github.com/user-attachments/assets/c330eb76-5b92-4ec6-9217-b179140ce8fe)
@@ -51,12 +52,8 @@ Logistic regression 평균 성능:
 
 KNN 평균 성능:
 
-     K  Accuracy  Precision    Recall  F1 Score
-0   3  0.811913   0.804239  0.784656  0.792421
-1   5  0.848087   0.850837  0.813228  0.830790
-2   7  0.838142   0.842872  0.798942  0.818986
-3   9  0.821858   0.830774  0.770370  0.797073
-4  11  0.821858   0.845190  0.748413  0.792176
+<img width="267" alt="image" src="https://github.com/user-attachments/assets/b5f48dd2-2340-40e9-97be-4d0b7beb920c" />
+
 
 최적의 K값: 5, F1 Score: 0.8308
 
@@ -65,9 +62,8 @@ KNN 평균 성능:
 
  SVM 평균 성능:
  
-    Accuracy  Precision    Recall  F1 Score  Kernel
-0  0.834973   0.853260  0.777249  0.812098     rbf
-1  0.831694   0.859069  0.762434  0.806166  linear
+<img width="290" alt="image" src="https://github.com/user-attachments/assets/c35bc9b7-f1f7-4a74-9f64-f90054380787" />
+
 
 최적 SVM 커널: rbf, F1 Score: 0.8121
 
@@ -76,11 +72,8 @@ KNN 평균 성능:
 
  Decision Tree 평균 성능:
  
-   Depth  Accuracy  Precision    Recall  F1 Score
-0     7  0.791694   0.772299  0.783333  0.775579
-1     3  0.781858   0.795233  0.704233  0.745305
-2     5  0.765410   0.770693  0.711905  0.736633
-3  None  0.738907   0.707413  0.754762  0.727872
+<img width="281" alt="image" src="https://github.com/user-attachments/assets/d8e8c175-93b8-412b-9912-af0ee0262c38" />
+
 
  최적 Decision Tree depth: 7, F1 Score: 0.7756
  
