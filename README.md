@@ -14,24 +14,24 @@
 
 2-1.Classification model training and testing
 
-Models: Logistic Regression, KNN, SVM, Decisioin Tree
+1) Models: Logistic Regression, KNN, SVM, Decisioin Tree
 
-Evaluaion: Accuracy, Precision, Recall, F1-score
+2) Evaluaion: Accuracy, Precision, Recall, F1-score
 
-Visualization: Bargraph, Line graph, Performance summary table, confusion matrix
+3) Visualization: Bargraph, Line graph, Performance summary table, confusion matrix
 
-Process: 
+4) Process: 
 #아래의 모델 평가 지표에서 Precision(예측시 실제로도 심장질환인 비율)과 Recall(실제로 심장질환이 있는 사람 중에 예측도 그러한 비율)사이의 편차가 크지 않고 둘 지표다 높은 모델이 "심장질환 예측"에 가장 적합하다고 생각함
 #4가지 모델의 평균 성능을 비교해봤을때, F1 점수(Precision과 Recall의 평균지표)가 높은 Logistic regression 모델과 KNN모델이 가장 적합할 것이라고 가정함.
 #아래에 파라미터 비교를 통해 상위 5가지 조합과 최고의 조합을 도출하고자 함
 
-No use in class(method,class,function): 
+5) No use in class(method,class,function): 
 ConfusionMatrixDisplay(class:utility class to visualize confusion matrix)
 pandas.plotting.table(method: visualize data frames as a table)
 ax.xaxis.set_visible, ax.yaxis.set_visible, ax.set_frame_on,auto_set_font_size, set_fontsize, scale(method: table object-table style,x,y axis hide and frame delete metod)
 sort_values (method:pandas-sort the dataframe by one or more columns.)
 
-Output: 
+6) Output: 
 
 4가지 모델 평균 성능 비교:
                   Model  Accuracy  Precision    Recall  F1 Score
