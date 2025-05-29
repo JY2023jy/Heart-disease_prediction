@@ -34,22 +34,15 @@ sort_values (method:pandas-sort the dataframe by one or more columns.)
 6) Output: 
 
 4가지 모델 평균 성능 비교:
-                  Model  Accuracy  Precision    Recall  F1 Score
-0        Decision Tree  0.765410   0.739355  0.769312  0.750195
-1                  KNN  0.848087   0.850837  0.813228  0.830790
-2  Logistic Regression  0.848197   0.867943  0.791005  0.826920
-3                  SVM  0.831694   0.859069  0.762434  0.806166
+<img width="363" alt="image" src="https://github.com/user-attachments/assets/9d196393-d459-4074-bc23-2748f609538c" />
+
 ![image](https://github.com/user-attachments/assets/c330eb76-5b92-4ec6-9217-b179140ce8fe)
 ---
 
 Logistic regression 평균 성능:
 
-   Accuracy  Precision    Recall  F1 Score Parameter
-0  0.854863   0.893638  0.776984  0.831014     C=0.1
-1  0.848197   0.867943  0.791005  0.826920      C=10
-2  0.848197   0.867943  0.791005  0.826920       C=1
-3  0.838306   0.860140  0.776720  0.815098     C=100
-4  0.811803   0.876266  0.690741  0.771074    C=0.01
+<img width="323" alt="image" src="https://github.com/user-attachments/assets/c26995a8-216d-491a-a265-0e07104f796b" />
+
 
 최적의 C값: C=0.1, F1 Score: 0.8310
 
