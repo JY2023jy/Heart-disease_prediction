@@ -4,12 +4,10 @@
 1.Preprocessing
   :
 ---
-
 2.Learning Model training and testing
   :different models (classification and clustering), combination of model parameters for each model
   :K-fold cross validation for testing classication models + use different evaluation methods
   :To find the topo five and best combination of the above
-
 ---
 
 2-1.Classification model training and testing
