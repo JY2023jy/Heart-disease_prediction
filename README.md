@@ -89,7 +89,11 @@ KNN 평균 성능:
 ---
 
 추가 확인:confusion matrix of logistic regression and KNN >
+
+
 ![image](https://github.com/user-attachments/assets/254bf2a1-c972-4ff5-80f0-b486b6c4036c)
+
+
 ![image](https://github.com/user-attachments/assets/3d299582-01da-444e-8938-32a8c3bf7ee0)
 
 
