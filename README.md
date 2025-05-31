@@ -141,195 +141,48 @@ Learning Model Training and Testing
 
 We applied different models (classification and clustering), experimented with combinations of parameters for each model, and used k-fold cross-validation for classification models. Evaluation metrics guided the selection of top five and best-performing configurations.
 
-2-1. Classification Model Training and Testing
+### 2-2. Clustering Model Training and Testing
 
-📌 Models:
-
-Logistic Regression
-
-KNN
-
-SVM
-
-Decision Tree
-
-📈 Evaluation Metrics:
-
-Accuracy
-
-Precision
-
-Recall
-
-F1-score
-
-📊 Visualization:
-
-Bar graphs
-
-Line graphs
-
-Performance summary tables
-
-Confusion matrices
-
-🔁 Evaluation Strategy:
-
-F1 score (the harmonic mean of precision and recall) was used as the main criterion.
-
-Models with high precision and recall with low variance were preferred.
-
-Logistic Regression and KNN showed consistently strong F1 scores.
-
-🛠️ Notes on Methods Not Used in Class:
-
-ConfusionMatrixDisplay (utility class)
-
-pandas.plotting.table
-
-Methods for styling tables: ax.set_visible, set_fontsize, etc.
-
-sort_values() for organizing dataframe results
-
-📁 Outputs:
-
-Comparison of model performance (average):
-
-
-Best Logistic Regression Model:
-
-C = 0.1, F1 Score: 0.8310
-
-
-
-Best KNN Model:
-
-k = 5, F1 Score: 0.8308
-
-
-
-Best SVM Model:
-
-Kernel: RBF, F1 Score: 0.8121
-
-Best Decision Tree Model:
-
-Depth = 7, F1 Score: 0.7756
-
-Top 5 Parameter Combinations:
-
-
-Best Overall Model (F1 Score):
-
-Logistic Regression, C=0.1, F1 = 0.8300
-
-Confusion Matrices:
-
-
-
-2-2. Clustering Model Training and Testing
-
-🔍 Objective:
-
+#### 🔍 Objective
 To identify natural groupings in patient data using unsupervised learning (no labels), and explore potential risk stratification via clustering.
 
-🧠 Algorithms Used:
+#### 🧠 Algorithms Used
+- **KMeans Clustering** (Centroid-based)
+- **Agglomerative Clustering** (Hierarchical-based)
 
-KMeans Clustering (Centroid-based)
+#### 🧪 Experimental Setup
+- PCA was applied to reduce dimensions for 2D visualization.
+- Cluster counts tested: **3, 4, 5**
+- Evaluation focused on **visual separation** and **clinical interpretability** (no silhouette score, per course rule)
 
-Agglomerative Clustering (Hierarchical-based)
+#### 🏆 Top 5 Configurations
 
-🧪 Experimental Setup:
+| Rank | Model             | Reason                                                |
+|------|------------------|--------------------------------------------------------|
+| 1    | KMeans (k=4)     | Most distinct and interpretable clusters              |
+| 2    | Agglo (n=5)      | Well-defined hierarchical grouping                    |
+| 3    | KMeans (k=5)     | Finer segmentation, clear separation                  |
+| 4    | KMeans (k=3)     | Simple 3-level grouping (low/moderate/high)           |
+| 5    | Agglo (n=4)      | Reasonably balanced and interpretable                 |
 
-PCA was applied to visualize clusters in 2D.
+#### ✅ Final Model Selection: **KMeans (k=4)**
+- Showed the clearest cluster boundaries in PCA space
+- Mapped well to expected patient groups (e.g., high, moderate, low, borderline)
+- Fast, scalable, and simple to implement
 
-Cluster counts tested: 3, 4, 5.
+#### 📊 Visual Output Files
+- `basic_clustering_comparison.png`: All n=3,4,5 comparisons
+- `top5_clustering_comparison.png`: Visualization of top 5 models
+- `final_kmeans_k4.png`: Final clustering result
 
-Models evaluated by visual inspection (no silhouette score).
+#### 🧠 Key Insights from KMeans (k=4)
 
-🏆 Top 5 Configurations:
-
-Rank
-
-Model
-
-Reason
-
-1
-
-KMeans (k=4)
-
-Most distinct and interpretable clusters
-
-2
-
-Agglo (n=5)
-
-Well-defined hierarchical grouping
-
-3
-
-KMeans (k=5)
-
-Finer segmentation, clear separation
-
-4
-
-KMeans (k=3)
-
-Simple 3-level grouping (low/moderate/high)
-
-5
-
-Agglo (n=4)
-
-Reasonably balanced and interpretable
+| Cluster | Description    | Key Features                        |
+|---------|----------------|-------------------------------------|
+| 0       | High-Risk      | ↑ oldpeak, ↑ ca, ↑ exang            |
+| 1       | Moderate-Risk  | Intermediate values in key features |
+| 2       | Low-Risk       | ↑ thalach, ↓ oldpeak, ↓ exang       |
+| 3       | Mixed          | Overlapping or borderline indicators|
 
 
-✅ Final Model Selection: KMeans (k=4)
 
-Showed the most visually distinct and clinically interpretable results.
-
-Aligned with expected patient strata: high, moderate, low, and borderline.
-
-Fast and efficient clustering method.
-
-📊 Visual Output:
-
-basic_clustering_comparison.png: Comparison across 3–5 clusters
-
-top5_clustering_comparison.png: Top 5 models visualization
-
-final_kmeans_k4.png: Final selected clustering result
-
-🧠 Insights from Clustering (KMeans k=4):
-
-Cluster
-
-Description
-
-Key Features
-
-0
-
-High-Risk
-
-↑ oldpeak, ↑ ca, ↑ exang
-
-1
-
-Moderate-Risk
-
-Intermediate features
-
-2
-
-Low-Risk
-
-↑ thalach, ↓ oldpeak, ↓ exang
-
-3
-
-Mixed
-
-Mixed/overlapping health profiles
