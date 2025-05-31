@@ -156,6 +156,7 @@ To identify natural groupings in patient data using unsupervised learning (no la
 - Evaluation focused on **visual separation** and **clinical interpretability** (no silhouette score, per course rule)
 
 #### Top 5 Configurations
+![1123123](https://github.com/user-attachments/assets/0749d836-86f5-4110-b828-26e48ae0e563)
 
 | Rank | Model             | Reason                                                |
 |------|------------------|--------------------------------------------------------|
@@ -169,6 +170,7 @@ To identify natural groupings in patient data using unsupervised learning (no la
 - Showed the clearest cluster boundaries in PCA space
 - Mapped well to expected patient groups (e.g., high, moderate, low, borderline)
 - Fast, scalable, and simple to implement
+![123123](https://github.com/user-attachments/assets/8480b91a-2c24-469e-80b4-369f5669c55b)
 
 #### Visual Output Files
 - `basic_clustering_comparison.png`: All n=3,4,5 comparisons
