@@ -1,0 +1,86 @@
+# 1. 필요한 라이브러리
+import pandas as pd
+import matplotlib.pyplot as plt
+from pandas.plotting import table
+from sklearn.model_selection import StratifiedKFold
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+# 2. 파일 업로드 및 데이터 로드
+from google.colab import files
+uploaded = files.upload()
+
+import io
+df = pd.read_csv(io.BytesIO(uploaded['heart.csv']))  # 업로드한 heart.csv
+
+X = df.drop('target', axis=1)
+y = df['target']
+kf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+# 3. 모든 모델과 파라미터 설정 후 결과 저장
+def cross_validate(model, label, model_name):
+    scores = []
+    for train_idx, test_idx in kf.split(X, y):
+        X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]
+        y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]
+        model.fit(X_train, y_train)
+        y_pred = model.predict(X_test)
+        scores.append({
+            'Model': model_name,
+            'Param': label,
+            'Accuracy': accuracy_score(y_test, y_pred),
+            'Precision': precision_score(y_test, y_pred),
+            'Recall': recall_score(y_test, y_pred),
+            'F1 Score': f1_score(y_test, y_pred)
+        })
+    return scores
+
+# 4. 각각 모델별로 파라미터 조합 실행
+results = []
+
+# Logistic Regression
+for C in [0.01, 0.1, 1, 10, 100]:
+    model = LogisticRegression(C=C, max_iter=1000)
+    results += cross_validate(model, f'C={C}', 'Logistic Regression')
+
+# KNN
+for k in [3, 5, 7, 9, 11]:
+    model = KNeighborsClassifier(n_neighbors=k)
+    results += cross_validate(model, f'K={k}', 'KNN')
+
+# SVM
+for kernel in ['linear', 'rbf']:
+    model = SVC(kernel=kernel)
+    results += cross_validate(model, kernel, 'SVM')
+
+# Decision Tree
+for depth in [3, 5, 7, None]:
+    model = DecisionTreeClassifier(max_depth=depth)
+    results += cross_validate(model, str(depth), 'Decision Tree')
+
+# 5. 평균 계산 및 상위 5개 출력
+df_results = pd.DataFrame(results)
+avg_results = df_results.groupby(['Model', 'Param']).mean(numeric_only=True).reset_index()
+top5 = avg_results.sort_values(by='F1 Score', ascending=False).head(5)
+
+# 6. 시각화
+fig, ax = plt.subplots(figsize=(10, 2))
+ax.xaxis.set_visible(False)
+ax.yaxis.set_visible(False)
+ax.set_frame_on(False)
+
+tbl = table(ax, top5.round(3), loc='center', colWidths=[0.15]*len(top5.columns))
+tbl.auto_set_font_size(False)
+tbl.set_fontsize(10)
+tbl.scale(1.2, 1.5)
+
+plt.title("Top 5 Model Parameter Combinations (Based on F1 Score)", fontsize=14, weight='bold')
+plt.tight_layout()
+plt.show()
+
+# 7. 최고의 조합 출력
+best = top5.iloc[0]
+print(f"🏆 F1 Score 기준 최고의 조합:\n모델: {best['Model']}, 파라미터: {best['Param']}, F1 Score: {best['F1 Score']:.4f}")
