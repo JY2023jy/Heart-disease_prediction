@@ -5,7 +5,9 @@
 
 ---
 1.Preprocessing
- The original dataset included multiple versions for different sources and formats. Among them, processed.cleveland.data was selected because it is the most commonly used and cleanest version for heart disease prediction research, with minimal missing data and consistent formatting.
+---
+The original dataset included multiple versions for different sources and formats. 
+Among them, processed.cleveland.data was selected because it is the most commonly used and cleanest version for heart disease prediction research, with minimal missing data and consistent formatting.
 
 The preprocessing steps include:
 
