@@ -170,12 +170,12 @@ To identify natural groupings in patient data using unsupervised learning (no la
 - Mapped well to expected patient groups (e.g., high, moderate, low, borderline)
 - Fast, scalable, and simple to implement
 
-#### 📊 Visual Output Files
+#### Visual Output Files
 - `basic_clustering_comparison.png`: All n=3,4,5 comparisons
 - `top5_clustering_comparison.png`: Visualization of top 5 models
 - `final_kmeans_k4.png`: Final clustering result
 
-#### 🧠 Key Insights from KMeans (k=4)
+#### Key Insights from KMeans (k=4)
 
 | Cluster | Description    | Key Features                        |
 |---------|----------------|-------------------------------------|
