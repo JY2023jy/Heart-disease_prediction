@@ -143,19 +143,19 @@ We applied different models (classification and clustering), experimented with c
 
 ### 2-2. Clustering Model Training and Testing
 
-#### 🔍 Objective
+#### Objective
 To identify natural groupings in patient data using unsupervised learning (no labels), and explore potential risk stratification via clustering.
 
-#### 🧠 Algorithms Used
+#### Algorithms Used
 - **KMeans Clustering** (Centroid-based)
 - **Agglomerative Clustering** (Hierarchical-based)
 
-#### 🧪 Experimental Setup
+#### Experimental Setup
 - PCA was applied to reduce dimensions for 2D visualization.
 - Cluster counts tested: **3, 4, 5**
 - Evaluation focused on **visual separation** and **clinical interpretability** (no silhouette score, per course rule)
 
-#### 🏆 Top 5 Configurations
+#### Top 5 Configurations
 
 | Rank | Model             | Reason                                                |
 |------|------------------|--------------------------------------------------------|
@@ -165,7 +165,7 @@ To identify natural groupings in patient data using unsupervised learning (no la
 | 4    | KMeans (k=3)     | Simple 3-level grouping (low/moderate/high)           |
 | 5    | Agglo (n=4)      | Reasonably balanced and interpretable                 |
 
-#### ✅ Final Model Selection: **KMeans (k=4)**
+#### Final Model Selection: **KMeans (k=4)**
 - Showed the clearest cluster boundaries in PCA space
 - Mapped well to expected patient groups (e.g., high, moderate, low, borderline)
 - Fast, scalable, and simple to implement
