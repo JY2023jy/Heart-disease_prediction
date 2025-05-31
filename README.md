@@ -1,5 +1,8 @@
 # Heart_disease_prediction
-:프로젝트 설명
+
+:The goal of our project is to 
+ analyze heart disease data and predict the likelihood of heart disease based on various health indicators of patients. 
+
 ---
 1.Preprocessing
   :
