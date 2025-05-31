@@ -61,10 +61,10 @@ These steps ensured the dataset is clean, numerical, and standardized—ready fo
 4가지 모델의 평균 성능을 비교해봤을때, F1 점수(Precision과 Recall의 평균지표)가 높은 Logistic regression 모델과 KNN모델이 가장 적합할 것이라고 가정함.
 아래에 파라미터 비교를 통해 상위 5가지 조합과 최고의 조합을 도출하고자 함
 
-6)function:[Uploading Classification (6).ipynb…]()
+5) Function:
 
 
-5) No use in class(method,class,function): 
+6) No use in class(method,class,function): 
 ConfusionMatrixDisplay(class:utility class to visualize confusion matrix)
 pandas.plotting.table(method: visualize data frames as a table)
 ax.xaxis.set_visible, ax.yaxis.set_visible, ax.set_frame_on,auto_set_font_size, set_fontsize, scale(method: table object-table style,x,y axis hide and frame delete metod)
