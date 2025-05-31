@@ -9,29 +9,29 @@
 The original dataset included multiple versions for different sources and formats. 
 Among them, processed.cleveland.data was selected because it is the most commonly used and cleanest version for heart disease prediction research, with minimal missing data and consistent formatting.
 
-The preprocessing steps include:
+**The preprocessing steps include:**
 
 Assigning column names based on the dataset documentation (14 attributes including age, sex, cp, etc.)
 
-Handling missing values:
+**Handling missing values:**
 
 Missing values in ca and thal were represented as ?, which were first replaced with np.nan.
 
 These NaN values were filled with the mode (most frequent value) of each column.
 
-Data type conversion:
+**Data type conversion:**
 
 After filling missing values, the columns were converted to appropriate numeric types.
 
-Encoding categorical features:
+**Encoding categorical features:**
 
 sex, cp, fbs, restecg, exang, slope, ca, thal were treated as categorical and encoded using one-hot encoding.
 
-Feature scaling:
+**Feature scaling:**
 
 The numerical features were scaled using StandardScaler to normalize the input range, which helps improve model performance.
 
-Final output:
+**Final output:**
 
 The preprocessed dataset was saved as a new CSV file named heart_disease_preprocessed.csv for use in model training and testing.
 
